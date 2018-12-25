@@ -1,4 +1,5 @@
 const mongoose = require('mongoose')
+const ObjectId  = mongoose.ObjectId
 
 const Todo = mongoose.model('Todo', {
     text: {
@@ -14,6 +15,10 @@ const Todo = mongoose.model('Todo', {
     completedAt: {
         type: Number,
         default: null
+    },
+    _creator: {
+        type: ObjectId,
+        required: true
     }
 })
 
